@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willsmith - Fresh Prince</title>
+<link href="https://fonts.loli.net/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700;900&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --deep-blue: #0a1628;
+  --accent-coral: #ff6b6b;
+  --accent-gold: #ffd93d;
+  --accent-teal: #4ecdc4;
+  --text-light: #ffffff;
+  --text-dim: #a0aec0;
+  --content-width: 860px;
+}
+
+body {
+  font-family: 'Noto Serif SC', 'Playfair Display', serif;
+  background: var(--deep-blue);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(30, 60, 100, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(20, 40, 60, 0.2) 0%, transparent 50%);
+}
+
+/* ===== 导航 ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: var(--text-light);
+}
+
+.nav-brand span { color: var(--accent-coral); }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-coral);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent-coral); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ===== 主视觉（自适应高度，不占满屏） ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px 30px;
+  position: relative;
+  background: 
+    linear-gradient(rgba(10, 22, 40, 0.7), rgba(10, 22, 40, 0.9)),
+    url('images/bg.jpg') center/cover fixed;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-issue {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 10vw, 90px);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h1 span {
+  display: block;
+  font-size: 0.6em;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent-coral);
+  -webkit-text-fill-color: var(--accent-coral);
+}
+
+.hero-subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: var(--text-light);
+  margin-top: 15px;
+}
+
+.hero-tagline {
+  font-size: 15px;
+  color: var(--text-dim);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+.profile-btn {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.profile-btn:hover {
+  background: var(--accent-coral);
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* ===== 红色分隔线（紧贴视频） ===== */
+.magazine-line {
+  width: 60px;
+  height: 4px;
+  background: var(--accent-coral);
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ===== 视频：紧跟红线，无边框 ===== */
+.video-container {
+  max-width: var(--content-width);
+  width: 100%;
+  margin: 12px auto 25px;
+  padding: 0 18px;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== 海洋生物导航：手机2列，紧凑排列 ===== */
+.jelly-nav {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5px 18px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.jelly-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 15px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  gap: 12px;
+}
+
+.jelly-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+
+.jelly-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 40, 80, 0.5));
+  transition: all 0.3s;
+}
+
+.jelly-card:hover .jelly-img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 8px 15px rgba(0, 60, 100, 0.6));
+}
+
+.jelly-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.jelly-card:hover .jelly-label {
+  color: var(--accent-teal);
+}
+
+/* 平板：3列 */
+@media (min-width: 600px) {
+  .jelly-nav {
+    max-width: 600px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .jelly-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px;
+  }
+  
+  .jelly-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* 桌面：6列一行 */
+@media (min-width: 900px) {
+  .jelly-nav {
+    max-width: var(--content-width);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+  }
+  
+  .jelly-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 8px;
+  }
+}
+
+/* ===== 通用区块 ===== */
+.section {
+  max-width: var(--content-width);
+  margin: 50px auto;
+  padding: 0 18px;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding-bottom: 15px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.section-title::first-letter {
+  color: var(--accent-coral);
+  font-size: 1.2em;
+}
+
+.page-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+/* ===== 赛程 ===== */
+.match-highlight {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+  border-left: 4px solid var(--accent-coral);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 0 10px 10px 0;
+  position: relative;
+}
+
+.match-highlight::before {
+  content: 'NEXT GAME';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent-coral);
+  background: rgba(255, 107, 107, 0.2);
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.match-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.match-teams {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.match-info {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: var(--accent-coral);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* 折叠面板 */
+details {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+summary {
+  cursor: pointer;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.05);
+  font-weight: bold;
+  transition: background 0.3s;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+summary::after {
+  content: '+';
+  font-size: 18px;
+  color: var(--accent-coral);
+  transition: transform 0.3s;
+}
+
+details[open] summary::after { transform: rotate(45deg); }
+summary:hover { background: rgba(255,255,255,0.08); }
+
+details > div {
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* 赛程列表 */
+.sched-list { list-style: none; }
+
+.sched-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 5px;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+  flex-wrap: wrap;
+}
+
+.sched-item:hover {
+  background: rgba(255,255,255,0.08);
+  border-left-color: var(--accent-coral);
+}
+
+.sched-item.played {
+  opacity: 0.6;
+}
+
+.sched-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  color: var(--accent-gold);
+  min-width: 70px;
+}
+
+.sched-vs { color: #8fe3a9; font-weight: bold; }
+.sched-at { color: #ffb366; font-weight: bold; }
+
+.sched-teams {
+  flex: 1;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.sched-venue {
+  font-size: 11px;
+  color: var(--text-dim);
+  display: block;
+  margin-top: 2px;
+}
+
+.sched-result {
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.result-win { background: rgba(72, 187, 120, 0.2); color: #48bb78; }
+.result-loss { background: rgba(245, 101, 101, 0.2); color: #f56565; }
+.result-tie { background: rgba(160, 174, 192, 0.2); color: #a0aec0; }
+
+/* 数据表格 */
+.data-box {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  margin: 8px 0 0;
+  overflow: hidden;
+}
+
+.data-box summary {
+  padding: 8px 12px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.data-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0;
+}
+
+.data-box th, .data-box td {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.data-box th { background: rgba(255,255,255,0.08); }
+
+/* ===== 照片墙 ===== */
+.pic-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.pic {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 6px;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.pic:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background: rgba(255,255,255,0.1);
+}
+
+.pic a { display: block; }
+
+.pic img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.pic small {
+  display: block;
+  margin-top: 6px;
+  opacity: 0.85;
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+/* 视频链接列表 */
+.link-list {
+  line-height: 2;
+  padding-left: 18px;
+}
+
+.link-list li { margin-bottom: 4px; }
+
+.link-list a {
+  color: #9cc4ff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.link-list a:hover { 
+  color: var(--accent-teal);
+  text-decoration: underline;
+}
+
+/* ===== 采访 ===== */
+.interview-item {
+  display: flex;
+  gap: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.interview-item:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateX(8px);
+}
+
+.interview-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--accent-gold);
+  line-height: 1;
+  min-width: 60px;
+}
+
+.interview-content h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.interview-content p {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.3);
+}
+
+.footer p {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.footer-brand span { color: var(--accent-coral); }
+
+/* ===== 灯箱 ===== */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#lightbox.show { display: flex; }
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+}
+
+#lightbox p {
+  margin-top: 15px;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* ===== 表单 ===== */
+#resultForm {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 998;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#resultForm.show { display: flex; }
+
+.form-card {
+  background: var(--deep-blue);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.form-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--accent-coral);
+}
+
+.form-group { margin-bottom: 10px; }
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-teal);
+}
+
+.form-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.form-btns button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.btn-cancel {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-light);
+}
+
+.btn-submit {
+  background: var(--accent-coral);
+  color: white;
+}
+
+.btn-submit:hover { background: #ff5252; }
+
+#genOut {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 6px;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  color: #68d391;
+  font-family: monospace;
+  font-size: 9px;
+  resize: none;
+}
+
+/* ===== 响应式微调 ===== */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px 25px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(35px, 12vw, 50px);
+  }
+  
+  .jelly-nav {
+    gap: 10px;
+    padding: 5px 15px 25px;
+  }
+  
+  .jelly-card {
+    padding: 10px 12px;
+  }
+  
+  .jelly-img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .jelly-label {
+    font-size: 14px;
+  }
+  
+  .video-container {
+    margin: 10px auto 20px;
+  }
+  
+  .section {
+    margin: 40px auto;
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep-blue); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-coral); }
+
+::selection {
+  background: var(--accent-coral);
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav">
+  <div class="nav-brand">WILL<span>SMITH</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">主页</a></li>
+    <li><a href="#schedule">赛程</a></li>
+    <li><a href="#photos">照片</a></li>
+    <li><a href="#interviews">采访</a></li>
+  </ul>
+</nav>
+
+<!-- ===== 主视觉（紧凑版） ===== -->
+<header class="hero" id="home">
+  <a class="profile-btn" href="willsmith.html?v=2" title="查看球员档案">🔍</a>
+  
+  <div class="hero-content">
+    <span class="hero-issue">VOL.01 — 2026 SEASON</span>
+    <h1>Willsmith<span>Fresh Prince</span></h1>
+    <div class="hero-subtitle">SAN JOSE SHARKS</div>
+    <p class="hero-tagline">"In the depths of the ocean, legends are born."</p>
+  </div>
+</header>
+
+<!-- ===== 红色分隔线 ===== -->
+<div class="magazine-line"></div>
+
+<!-- ===== 视频：紧贴红线 ===== -->
+<div class="video-container">
+  <video src="videos/intro5.mp4" controls muted autoplay loop playsinline></video>
+</div>
+
+<!-- ===== 海洋生物导航（手机2列） ===== -->
+<div class="jelly-nav">
+  <a href="#schedule" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish1.png" alt="赛事行程">
+    <span class="jelly-label">赛程</span>
+  </a>
+  <a href="#interviews" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish2.png" alt="采访/播客">
+    <span class="jelly-label">采访</span>
+  </a>
+  <a href="#oncourt" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish3.png" alt="场上照片">
+    <span class="jelly-label">场上</span>
+  </a>
+  <a href="#offcourt" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish4.png" alt="场下照片">
+    <span class="jelly-label">场下</span>
+  </a>
+  <a href="#life" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish5.png" alt="生活照">
+    <span class="jelly-label">生活</span>
+  </a>
+  <a href="#event" class="jelly-card">
+    <img class="jelly-img" src="images/jellyfish6.png" alt="活动照">
+    <span class="jelly-label">活动</span>
+  </a>
+</div>
+
+<!-- ===== 赛事行程 ===== -->
+<section class="section" id="schedule">
+  <div class="section-header">
+    <h2 class="section-title">赛事行程</h2>
+    <span class="page-number">P.02 — SCHEDULE</span>
+  </div>
+  
+  <!-- 下一场比赛 -->
+  <div class="match-highlight">
+    <div class="match-date">9月23日 · 10:00</div>
+    <div class="match-teams">vs 维加斯金骑士队</div>
+    <div class="match-info">主场 · SAP Center · 赛季首场（季前赛）</div>
+    <button class="btn" onclick="openForm('9月23日','维加斯金骑士队')">✎ 录入结果</button>
+  </div>
+  
+  <!-- 2026-2027赛季 -->
+  <details open>
+    <summary>2026-2027赛季（88场）</summary>
+    <div>
+      
+      <details>
+        <summary>9月（4场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item played">
+              <span class="sched-date">9月21日</span>
+              <div class="sched-teams">
+                <span class="sched-at">@</span> 阿纳海姆鸭队
+                <span class="sched-venue">04:00 · 客场 · Honda Center</span>
+              </div>
+              <span class="sched-result result-loss">2:6 败</span>
+              <details class="data-box">
+                <summary>当天数据</summary>
+                <table>
+                  <tr><th>进球</th><th>助攻</th><th>射门</th><th>上场时间</th></tr>
+                  <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                </table>
+              </details>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">9月23日</span>
+              <div class="sched-teams">
+                <span class="sched-vs">vs</span> 维加斯金骑士队
+                <span class="sched-venue">10:00 · 主场 · SAP Center</span>
+              </div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">9月25日</span>
+              <div class="sched-teams">
+                <span class="sched-vs">vs</span> 阿纳海姆鸭队
+                <span class="sched-venue">10:00 · 主场 · SAP Center</span>
+              </div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">9月27日</span>
+              <div class="sched-teams">
+                <span class="sched-vs">vs</span> 维加斯金骑士队
+                <span class="sched-venue">10:00 · 主场 · SAP Center</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>10月（14场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">10月2日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 佛罗里达黑豹队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月4日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 洛杉矶国王队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月6日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 达拉斯星队<span class="sched-venue">08:00 · 客场 · American Airlines Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月9日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 圣路易斯蓝调队<span class="sched-venue">08:00 · 客场 · Enterprise Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月11日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 埃德蒙顿油人队<span class="sched-venue">04:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月14日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 波士顿棕熊队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月16日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 纳什维尔掠夺者队<span class="sched-venue">08:00 · 客场 · Bridgestone Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月18日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 底特律红翼队<span class="sched-venue">07:00 · 客场 · Little Caesars Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月20日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 多伦多枫叶队<span class="sched-venue">07:30 · 客场 · Scotiabank Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月21日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 蒙特利尔加拿大人队<span class="sched-venue">07:00 · 客场 · Bell Centre</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月23日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 渥太华参议员队<span class="sched-venue">07:00 · 客场 · Canadian Tire Centre</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月25日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 波士顿棕熊队<span class="sched-venue">07:00 · 客场 · TD Garden</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月28日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 布法罗军刀队<span class="sched-venue">10:30 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">10月30日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 温哥华加人队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>11月（15场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">11月1日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 渥太华参议员队<span class="sched-venue">04:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月3日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 卡尔加里火焰队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月5日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 洛杉矶国王队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月7日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 明尼苏达狂野队<span class="sched-venue">09:00 · 客场 · Grand Casino Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月8日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 达拉斯星队<span class="sched-venue">09:00 · 客场 · American Airlines Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月10日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 纽约岛人队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月12日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 匹兹堡企鹅队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月15日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 犹他猛犸象队<span class="sched-venue">10:00 · 客场 · Delta Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月16日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 纳什维尔掠夺者队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月18日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 卡尔加里火焰队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月22日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 西雅图海怪队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月24日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 明尼苏达狂野队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月26日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 阿纳海姆鸭队<span class="sched-venue">11:00 · 客场 · Honda Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月28日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 维加斯金骑士队<span class="sched-venue">05:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">11月29日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 科罗拉多雪崩队<span class="sched-venue">10:00 · 客场 · Ball Arena</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>12月（14场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">12月2日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 新泽西魔鬼队<span class="sched-venue">08:30 · 客场 · Prudential Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月4日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 纽约游骑兵队<span class="sched-venue">08:00 · 客场 · Madison Square Garden</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月5日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 纽约岛人队<span class="sched-venue">08:00 · 客场 · UBS Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月7日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 匹兹堡企鹅队<span class="sched-venue">04:00 · 客场 · PPG Paints Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月9日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 西雅图海怪队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月10日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 洛杉矶国王队<span class="sched-venue">10:30 · 客场 · Crypto.com Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月12日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 洛杉矶国王队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月15日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 温哥华加人队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月17日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 维加斯金骑士队<span class="sched-venue">11:00 · 客场 · T-Mobile Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月20日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 温哥华加人队<span class="sched-venue">11:00 · 客场 · Rogers Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月23日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 西雅图海怪队<span class="sched-venue">10:40 · 客场 · Climate Pledge Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月27日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 维加斯金骑士队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月29日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 温尼伯喷气机队<span class="sched-venue">08:30 · 客场 · Canada Life Centre</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">12月30日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 卡尔加里火焰队<span class="sched-venue">09:00 · 客场 · Scotiabank Saddledome</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>2027年1月（13场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">1月2日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 费城飞人队<span class="sched-venue">05:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月3日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 多伦多枫叶队<span class="sched-venue">08:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月5日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 新泽西魔鬼队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月7日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 达拉斯星队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月9日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 华盛顿首都人队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月10日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 纽约游骑兵队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月14日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 埃德蒙顿油人队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月15日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 卡尔加里火焰队<span class="sched-venue">09:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月17日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 西雅图海怪队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月19日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 犹他猛犸象队<span class="sched-venue">05:00 · 客场 · Delta Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月24日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 埃德蒙顿油人队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月29日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 纳什维尔掠夺者队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">1月31日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 芝加哥黑鹰队<span class="sched-venue">05:00 · 主场 · SAP Center</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>2月（8场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">2月11日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 芝加哥黑鹰队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月14日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 底特律红翼队<span class="sched-venue">05:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月16日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 温尼伯喷气机队<span class="sched-venue">08:30 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月20日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 华盛顿首都人队<span class="sched-venue">08:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月22日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 佛罗里达黑豹队<span class="sched-venue">07:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月24日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 坦帕湾闪电队<span class="sched-venue">08:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月26日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 卡罗莱纳飓风队<span class="sched-venue">08:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">2月28日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 费城飞人队<span class="sched-venue">08:00 · 主场 · SAP Center</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>3月（15场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">3月2日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 蒙特利尔加拿大人队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月4日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 哥伦布蓝夹克队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月6日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 科罗拉多雪崩队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月7日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 坦帕湾闪电队<span class="sched-venue">11:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月10日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 维加斯金骑士队<span class="sched-venue">11:30 · 客场 · T-Mobile Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月12日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 圣路易斯蓝调队<span class="sched-venue">09:00 · 客场 · Enterprise Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月14日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 哥伦布蓝夹克队<span class="sched-venue">08:00 · 客场 · Nationwide Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月16日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 布法罗军刀队<span class="sched-venue">07:00 · 客场 · KeyBank Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月17日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 芝加哥黑鹰队<span class="sched-venue">08:00 · 客场 · United Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月19日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 多伦多枫叶队<span class="sched-venue">08:00 · 客场 · Scotiabank Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月21日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 卡罗莱纳飓风队<span class="sched-venue">10:30 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月23日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 阿纳海姆鸭队<span class="sched-venue">10:00 · 客场 · Honda Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月25日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 阿纳海姆鸭队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月27日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 西雅图海怪队<span class="sched-venue">09:00 · 客场 · Climate Pledge Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">3月30日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 科罗拉多雪崩队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+      <details>
+        <summary>4月（5场）</summary>
+        <div>
+          <ul class="sched-list">
+            <li class="sched-item">
+              <span class="sched-date">4月1日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 埃德蒙顿油人队<span class="sched-venue">08:30 · 客场 · Rogers Place</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">4月4日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 温哥华加人队<span class="sched-venue">10:00 · 客场 · Rogers Arena</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">4月5日</span>
+              <div class="sched-teams"><span class="sched-at">@</span> 圣路易斯蓝调队<span class="sched-venue">09:30 · 客场 · Enterprise Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">4月9日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 明尼苏达狂野队<span class="sched-venue">10:00 · 主场 · SAP Center</span></div>
+            </li>
+            <li class="sched-item">
+              <span class="sched-date">4月11日</span>
+              <div class="sched-teams"><span class="sched-vs">vs</span> 阿纳海姆鸭队<span class="sched-venue">04:00 · 主场 · SAP Center</span></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+      
+    </div>
+  </details>
+  
+  <!-- 历史赛季 -->
+  <details>
+    <summary>2025-2026赛季</summary>
+    <div>
+      <ul class="sched-list">
+        <li class="sched-item played">
+          <span class="sched-date">3月8日</span>
+          <div class="sched-teams">
+            <span class="sched-vs">vs</span> 科罗拉多雪崩队
+            <span class="sched-venue">主场 · SAP Center</span>
+          </div>
+          <span class="sched-result result-tie">2:2 平</span>
+          <details class="data-box">
+            <summary>当天数据</summary>
+            <table>
+              <tr><th>进球</th><th>助攻</th><th>射门</th><th>上场时间</th></tr>
+              <tr><td>0</td><td>1</td><td>2</td><td>16分钟</td></tr>
+            </table>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ===== 照片 ===== -->
+<section class="section" id="photos">
+  <div class="section-header">
+    <h2 class="section-title">照片集锦</h2>
+    <span class="page-number">P.08 — GALLERY</span>
+  </div>
+  
+  <!-- 场上照片 -->
+  <details open id="oncourt">
+    <summary>📸 场上照片</summary>
+    <div>
+      <details>
+        <summary>【图片】</summary>
+        <div>
+          <details>
+            <summary>2026年10月6日（0张）</summary>
+            <div>
+              <ul class="pic-list">
+                <!-- 照片行粘到这里 -->
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      <details>
+        <summary>【视频】</summary>
+        <div>
+          <details>
+            <summary>2026年10月6日（1个）</summary>
+            <div>
+              <ol class="link-list">
+                <li><a href="粘贴视频链接" target="_blank">比赛集锦（B站）</a></li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </details>
+    </div>
+  </details>
+  
+  <!-- 场下照片 -->
+  <details id="offcourt">
+    <summary>🎯 场下照片</summary>
+    <div>
+      <details>
+        <summary>【图片】</summary>
+        <div>
+          <details>
+            <summary>2026年9月19日（3张）</summary>
+            <div>
+              <ul class="pic-list">
+                <li class="pic">
+                  <a href="images/2026920-1.jpg" target="_blank">
+                    <img src="images/2026920-1.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月19日 训练照</small>
+                </li>
+                <li class="pic">
+                  <a href="images/2026920-2.jpg" target="_blank">
+                    <img src="images/2026920-2.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月19日 训练照</small>
+                </li>
+                <li class="pic">
+                  <a href="images/2026920-3.jpg" target="_blank">
+                    <img src="images/2026920-3.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月19日 冰上训练</small>
+                </li>
+              </ul>
+            </div>
+          </details>
+          
+          <details>
+            <summary>2026年9月20日（4张）</summary>
+            <div>
+              <ul class="pic-list">
+                <li class="pic">
+                  <a href="images/0921-1.jpg" target="_blank">
+                    <img src="images/0921-1.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 冰上训练</small>
+                </li>
+                <li class="pic">
+                  <a href="images/0921-2.jpg" target="_blank">
+                    <img src="images/0921-2.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 冰上训练</small>
+                </li>
+                <li class="pic">
+                  <a href="images/0921-3.jpg" target="_blank">
+                    <img src="images/0921-3.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 冰上训练</small>
+                </li>
+                <li class="pic">
+                  <a href="images/0921-4.jpg" target="_blank">
+                    <img src="images/0921-4.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 冰上训练</small>
+                </li>
+              </ul>
+            </div>
+          </details>
+          
+          <details>
+            <summary>2026年9月21日（4张）</summary>
+            <div>
+              <ul class="pic-list">
+                <li class="pic">
+                  <a href="images/will1.jpg" target="_blank">
+                    <img src="images/will1.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月21日 冰上训练—黑皮金发辣弟</small>
+                </li>
+                <li class="pic">
+                  <a href="images/will2.jpg" target="_blank">
+                    <img src="images/will2.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月21日 冰上训练—黑皮金发辣弟</small>
+                </li>
+                <li class="pic">
+                  <a href="images/will3.jpg" target="_blank">
+                    <img src="images/will3.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月21日 冰上训练—黑皮金发辣弟</small>
+                </li>
+                <li class="pic">
+                  <a href="images/will4.jpg" target="_blank">
+                    <img src="images/will4.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月21日 冰上训练—黑皮金发辣弟</small>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      
+      <details>
+        <summary>【视频】</summary>
+        <div>
+          <details>
+            <summary>2026年9月20日（3个）</summary>
+            <div>
+              <ol class="link-list">
+                <li><a href="https://www.tumblr.com/dailywillmack/828281213856972800/will-looks-so-fast-strong-and-hes-locked-in?source=share" target="_blank">9月20号冰场练习</a></li>
+                <li><a href="https://www.tumblr.com/unoqlo/828276246236495872/will-and-kesselring-practice-a-puck-battle-drill?source=share">9月20号冰场练习</a></li>
+                <li><a href="https://www.tumblr.com/beautifulduckweed/828251693491847168/sanjosesharks-working-for-the-weekend?source=share">9月20号冰场练习</a></li>
+              </ol>
+            </div>
+          </details>
+          
+          <details>
+            <summary>2026年9月21日（3个）</summary>
+            <div>
+              <ol class="link-list">
+                <li><a href="https://www.instagram.com/p/Ddhg9M8EjVS/?img_index=8&stkn=NXVsZ29ueWV4eGc0" target="_blank">9月21号冰场练习</a></li>
+                <li><a href="https://www.tumblr.com/aestheticxfovvs/828342228903723008/macker-bug-shooting-absolute-daggers-over-there?source=share">9月21号冰场练习</a></li>
+                <li><a href="https://www.tumblr.com/trululy/828327140998135808/so-what-im-seeing-here-is-that-will-was-spinning?source=share">9月21号冰场练习</a></li>
+              </ol>
+            </div>
+          </details>
+        </div>
+      </details>
+    </div>
+  </details>
+  
+  <!-- 生活照 -->
+  <details id="life">
+    <summary>🌊 生活照</summary>
+    <div>
+      <details>
+        <summary>【图片】</summary>
+        <div>
+          <details>
+            <summary>2026年9月21日（1张）</summary>
+            <div>
+              <ul class="pic-list">
+                <li class="pic">
+                  <a href="images/willy.jpg" target="_blank">
+                    <img src="images/willy.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月21日 —爆出来的夏休期和朋友的照片</small>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+    </div>
+  </details>
+  
+  <!-- 活动照 -->
+  <details id="event">
+    <summary>✨ 活动照</summary>
+    <div>
+      <details>
+        <summary>【图片】</summary>
+        <div>
+          <details>
+            <summary>2026年9月20日（6张）</summary>
+            <div>
+              <ul class="pic-list">
+                <li class="pic">
+                  <a href="images/hd1.jpg" target="_blank">
+                    <img src="images/hd1.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后一</small>
+                </li>
+                <li class="pic">
+                  <a href="images/hd2.jpg" target="_blank">
+                    <img src="images/hd2.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后二</small>
+                </li>
+                <li class="pic">
+                  <a href="images/hd3.jpg" target="_blank">
+                    <img src="images/hd3.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后三</small>
+                </li>
+                <li class="pic">
+                <a href="images/hd4.jpg" target="_blank">
+                    <img src="images/hd4.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后四</small>
+                </li>
+                <li class="pic">
+                  <a href="images/hd5.jpg" target="_blank">
+                    <img src="images/hd5.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后五</small>
+                </li>
+                <li class="pic">
+                  <a href="images/hd6.jpg" target="_blank">
+                    <img src="images/hd6.jpg" alt="" loading="lazy">
+                  </a>
+                  <small>9月20日 拍摄幕后六</small>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      </div>
+  </details>
+</section>
+
+<!-- ===== 采访 ===== -->
+<section class="section" id="interviews">
+  <div class="section-header">
+    <h2 class="section-title">采访/播客</h2>
+    <span class="page-number">P.15 — INTERVIEWS</span>
+  </div>
+  
+  <a href="https://www.nhl.com/sharks/video/media-availability-smith-9-17-6405219445112" target="_blank" class="interview-item">
+    <div class="interview-date">SEP 17</div>
+    <div class="interview-content">
+      <h3>Media Availability Smith</h3>
+      <p>2026-09-17 赛后媒体采访</p>
+    </div>
+  </a>
+  <a href="https://b23.tv/loIr0Md" target="_blank" class="interview-item">
+  <div class="interview-date">SEP 23</div>
+  <div class="interview-content">
+    <h3>更衣室采访</h3>
+    <p>2026-09-23 🏕pick</p>
+  </div>
+</a>
+</section>
+
+  <!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="footer-brand">WILL<span>SMITH</span></div>
+  <p>Fresh Prince · San Jose Sharks</p>
+  <p>© 2026 Personal Fan Site</p>
+</footer>
+
+<!-- ===== 灯箱 ===== -->
+<div id="lightbox">
+  <img src="" alt="">
+  <p>点击任意位置关闭</p>
+</div>
+  <!-- ===== 表单 ===== -->
+<div id="resultForm">
+  <div class="form-card">
+    <h3>✎ 录入比赛结果</h3>
+    
+    <div class="form-group">
+      <label>比赛日期</label>
+      <input type="text" id="fDate" placeholder="9月21日">
+    </div>
+    
+    <div class="form-group">
+      <label>对手队名</label>
+      <input type="text" id="fOpp" placeholder="维加斯金骑士队">
+    </div>
+    
+    <div class="form-group">
+      <label>比分</label>
+      <input type="text" id="fScore" placeholder="5:3">
+    </div>
+    
+    <div class="form-group">
+      <label>结果</label>
+      <select id="fRes">
+        <option value="胜">胜</option>
+        <option value="负">负</option>
+        <option value="平">平</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>进球</label>
+      <input type="number" id="fG" placeholder="0">
+    </div>
+    
+    <div class="form-group">
+      <label>助攻</label>
+      <input type="number" id="fA" placeholder="0">
+    </div>
+    
+    <div class="form-group">
+      <label>射门</label>
+      <input type="number" id="fS" placeholder="0">
+    </div>
+    
+    <div class="form-group">
+      <label>上场时间</label>
+      <input type="text" id="fT" placeholder="18分钟">
+    </div>
+    
+    <div class="form-btns">
+      <button class="btn-cancel" onclick="closeForm()">取消</button>
+      <button class="btn-submit" onclick="genCode()">生成代码</button>
+    </div>
+    
+    <textarea id="genOut" readonly placeholder="生成的代码出现在这里"></textarea>
+    
+    <div class="form-btns">
+      <button class="btn-cancel" onclick="copyGen()">一键复制</button>
+      <button class="btn-submit" onclick="closeForm()">完成</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// 折叠面板链接处理
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href');
+    if (!id || id.length < 2) return;
+    var t = document.querySelector(id);
+    if (!t || t.tagName !== 'DETAILS') return;
+    e.preventDefault();
+    var p = t;
+    while (p) {
+      if (p.tagName === 'DETAILS') p.open = true;
+      p = p.parentElement;
+    }
+    setTimeout(function(){
+      t.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 100);
+  });
+});
+
+// 灯箱
+var lb = document.getElementById('lightbox');
+var lbImg = lb.querySelector('img');
+
+document.querySelectorAll('.pic a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    lbImg.src = a.getAttribute('href');
+    lb.classList.add('show');
+  });
+});
+
+lb.addEventListener('click', function(){
+  lb.classList.remove('show');
+  lbImg.src = '';
+});
+
+// 表单功能
+function openForm(date, opp){
+  document.getElementById('fDate').value = date || '';
+  document.getElementById('fOpp').value = opp || '';
+  document.getElementById('resultForm').classList.add('show');
+}
+
+function closeForm(){
+  document.getElementById('resultForm').classList.remove('show');
+}
+
+function genCode(){
+  var d = document.getElementById('fDate').value || 'X月X日';
+  var o = document.getElementById('fOpp').value || '对手';
+  var s = document.getElementById('fScore').value || '0:0';
+  var r = document.getElementById('fRes').value;
+  var g = document.getElementById('fG').value || '0';
+  var a = document.getElementById('fA').value || '0';
+  var sh = document.getElementById('fS').value || '0';
+  var t = document.getElementById('fT').value || '0分钟';
+  
+  var cls = r === '胜' ? 'result-win' : (r === '负' ? 'result-loss' : 'result-tie');
+  
+  var code = '<li class="sched-item played">\n' +
+    '  <span class="sched-date">' + d + '</span>\n' +
+    '  <div class="sched-teams">\n' +
+    '    vs ' + o + '\n' +
+    '    <span class="sched-venue">时间地点按原行保留</span>\n' +
+    '  </div>\n' +
+    '  <span class="sched-result ' + cls + '">' + s + ' ' + r + '</span>\n' +
+    '  <details class="data-box">\n' +
+    '    <summary>当天数据</summary>\n' +
+    '    <table>\n' +
+    '      <tr><th>进球</th><th>助攻</th><th>射门</th><th>上场时间</th></tr>\n' +
+    '      <tr><td>' + g + '</td><td>' + a + '</td><td>' + sh + '</td><td>' + t + '</td></tr>\n' +
+    '    </ttable>\n' +
+    '  </details>\n' +
+    '</li>';
+    
+    document.getElementById('genOut').value = 
+    '【替换赛程里对应那行】\n' + code +
+    '\n\n提示：粘贴后把原行的 @/vs 和时间地点照抄回来。';
+}
+
+function copyGen(){
+  var o = document.getElementById('genOut');
+  o.focus();
+  o.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch(e) {}
+  alert(ok ? '已复制！' : '请手动复制');
+}
+</script>
+
+</body>
+</html>

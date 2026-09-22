@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WILL SMITH · 个人职业档案 | San Jose Sharks</title>
+<meta name="description" content="职业冰球运动员 Will Smith 个人职业档案：青少年梯队、USNTDP、NCAA、NHL 生涯数据与荣誉全记录。">
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  ⚙️ 换照片配置区 —— 平时只需修改下面这一行          ║
+     ╠══════════════════════════════════════════════════════╣
+     ║  ① 本地图片：图片与本网页放同一文件夹，写文件名    ║
+     ║     例：const PHOTO = "photo.jpg";                  ║
+     ║  ② 网络图片：写完整链接（注意选不过期的直链）      ║
+     ║  ③ base64：写 data:image/jpeg;base64,...            ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<script>
+const PHOTO = "images/id.jpg";
+
+/* 可选：照片说明与相框下方小标签（一般不用动） */
+const PHOTO_ALT = "Will Smith 个人肖像照";
+const PHOTO_CAPTION = "ID-PHOTO · WILL SMITH · #2 SAN JOSE";
+
+/* ╔══════════════════════════════════════════════════════╗
+     ║  🎵 背景音乐配置                                  ║
+     ╠════════════════════════════════════════════════════╣
+     ║  MUSIC_URL：mp3 放与本页同文件夹写文件名          ║
+     ║    例："music.mp3"；或填网络直链；留空 "" 则不启用 ║
+     ║  MUSIC_VOLUME：音量 0 ~ 1                         ║
+     ║  MUSIC_AUTOPLAY：true = 用户首次点按页面时自动播放 ║
+     ║    （浏览器禁止一打开就出声，这是合规的兜底方案）  ║
+     ╚════════════════════════════════════════════════════╝ */
+const MUSIC_URL = "music.mp3";
+const MUSIC_VOLUME = 0.5;
+const MUSIC_AUTOPLAY = true;
+
+/* ╔══════════════════════════════════════════════════════╗
+     ║  🌸 花朵跳转入口（相框上的 5 个花形装饰）         ║
+     ╠════════════════════════════════════════════════════╣
+     ║  url：目标网页文件（需自己创建，与本章同文件夹）  ║
+     ║  label：悬停提示 / 下方图例文字                    ║
+     ║  把某朵的 url 改成 ""，该朵花就只作装饰不可点     ║
+     ╚════════════════════════════════════════════════════╝ */
+const FLOWER_LINKS = {
+  ring:      { url: "links.html",    label: "Tips" },
+  blueMain:  { url: "highlights.html", label: "BCline" },
+  whiteA:    { url: "awards.html",     label: "Willmack" },
+  whiteB:    { url: "news.html",       label: "儿时旧照" },
+  blueSmall: { url: "fabes.html",      label: "被提及的willy" }
+};
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Long+Cang&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080f1a; --bg-2:#0b1524; --card:#0d1a2b; --card-2:#112238;
+    --ink:#e8f0f9; --muted:#8aa3bd; --line:rgba(98,160,220,.22);
+    --accent:#62a0dc; --accent-soft:rgba(98,160,220,.14);
+    --gold:#e8c06a; --silver:#c9d5e2; --teal:#19c2d6; --orange:#e59a3e;
+    --paper:#f3ecdc; --paper-ink:#4a4034;
+    --frame-blue:#2f5a86; --frame-white:#eef3fa; --leaf:#6f9b63;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  svg{display:block}
+  ::selection{background:rgba(98,160,220,.35)}
+  section[id]{scroll-margin-top:90px}
+  .mono{font-family:ui-monospace,'SF Mono','Cascadia Code',Consolas,'Courier New',monospace}
+  button{font-family:inherit}
+
+  /* ===== 顶部导航（含返回按钮） ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,15,26,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:background .3s}
+  .topbar.scrolled{background:rgba(8,15,26,.95)}
+  .topbar-inner{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .tb-left{display:flex;align-items:center;gap:14px}
+  .back-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(98,160,220,.45);color:var(--accent);
+    padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:1px;cursor:pointer;transition:.25s}
+  .back-btn svg{width:13px;height:13px}
+  .back-btn:hover{background:var(--accent);color:#06131f;border-color:var(--accent)}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px}
+  .logo b{color:var(--accent)}
+  .nav{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 13px;border-radius:999px;white-space:nowrap;transition:.25s}
+  .nav a:hover{color:var(--ink);background:var(--accent-soft)}
+  .nav a.active{color:#06131f;background:var(--accent);font-weight:700}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;padding:140px 24px 90px;overflow:hidden;
+    background:
+      radial-gradient(900px 520px at 82% -10%, rgba(98,160,220,.15), transparent 60%),
+      radial-gradient(620px 420px at -10% 110%, rgba(232,192,106,.06), transparent 60%),
+      linear-gradient(180deg,#0a1626,var(--bg));}
+  .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(rgba(98,160,220,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(98,160,220,.055) 1px, transparent 1px);
+    background-size:46px 46px}
+  .globe{position:absolute;right:-110px;top:30px;width:430px;transform:rotate(8deg);opacity:.6;pointer-events:none}
+  .hero-star{position:absolute;color:rgba(232,192,106,.55);font-size:18px;pointer-events:none}
+  .hero-stripe{position:absolute;bottom:0;left:0;right:0;height:9px;
+    background:repeating-linear-gradient(45deg, rgba(98,160,220,.38) 0 13px, transparent 13px 26px)}
+  .hero-grid{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:60px;align-items:center}
+
+  /* ===== 相册查看器 + 蓝白花卉相框（自适应照片比例） ===== */
+  .album-view{background:#0c1728;border:1px solid rgba(98,160,220,.28);border-radius:20px;padding:12px;box-shadow:0 34px 80px -28px rgba(0,0,0,.9)}
+  .album-topbar{display:flex;justify-content:space-between;align-items:center;padding:4px 10px 12px;color:#8fb3dd;font-size:12px;letter-spacing:2px}
+  .album-x{width:28px;height:28px;border:1px solid rgba(98,160,220,.4);border-radius:9px;display:flex;align-items:center;justify-content:center;
+    color:#9db8dd;font-size:13px;background:transparent;cursor:pointer;transition:.25s;flex-shrink:0}
+  .album-x:hover{background:rgba(98,160,220,.2);color:#e3edf8;border-color:var(--accent)}
+  .album-count b{color:#e3edf8}
+  .album-body{position:relative;border-radius:14px;padding:30px 24px 24px;
+    background:
+      radial-gradient(rgba(98,160,220,.16) 1px, transparent 1.3px) 0 0/18px 18px,
+      radial-gradient(280px 200px at 72% 18%, rgba(98,160,220,.10), transparent 65%),
+      radial-gradient(240px 180px at 12% 88%, rgba(31,58,95,.4), transparent 65%),
+      #0a1524}
+  .album-cap{padding:12px 6px 2px;text-align:center;color:#8fb3dd;font-size:11.5px;letter-spacing:2px}
+
+  /* 相框：蓝白相间 · 尺寸随照片自然撑开 */
+  .frame{position:relative;background:linear-gradient(160deg,#f7fafe,#e6edf7);padding:13px;border-radius:16px;border:2px solid #c6d5ea;
+    box-shadow:0 26px 60px -18px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.06)}
+  .frame-inner{border:8px solid var(--frame-blue);border-radius:10px;background:#dce6f2;padding:10px;box-shadow:inset 0 2px 10px rgba(31,58,95,.2)}
+  .photo{width:100%;height:auto;min-height:150px;background:#0e2033;border:4px solid #fdfeff;border-radius:4px;box-shadow:0 8px 20px rgba(21,42,70,.3)}
+
+  /* 相框装饰 */
+  .ring{position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:52px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+  .heart{position:absolute;top:-14px;left:-14px;width:34px;transform:rotate(-14deg);filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+  .jersey{position:absolute;top:-14px;right:-10px;transform:rotate(8deg);width:60px;height:60px;border-radius:16px;
+    background:linear-gradient(145deg,#f6f9fd,#d0dfee);border:1px solid #9db8dd;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(10,22,38,.5)}
+  .jersey b{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#1d3a5f;line-height:1}
+  .jersey span{font-size:8px;letter-spacing:2px;color:#2f5a86}
+  .flowers{position:absolute;right:-46px;top:9%;height:82%;width:auto;aspect-ratio:150/310;min-width:64px;z-index:3;pointer-events:none;
+    filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
+  .frame.is-landscape .flowers{top:2%;height:96%}
+  .frame.is-tall .flowers{top:12%;height:74%}
+
+  /* ===== 🌸 花朵跳转入口 ===== */
+  .fl-link{cursor:pointer;pointer-events:auto;outline:none}
+  .fl-link .fg{transform-box:fill-box;transform-origin:50% 50%;
+    transition:transform .32s cubic-bezier(.34,1.56,.64,1), filter .32s;
+    animation:sway 3.6s ease-in-out infinite}
+  #fl-ring .fg{animation-delay:.9s}
+  #fl-blue-main .fg{animation-delay:0s}
+  #fl-white-a .fg{animation-delay:.6s}
+  #fl-white-b .fg{animation-delay:1.2s}
+  #fl-blue-small .fg{animation-delay:1.8s}
+  .fl-link:hover .fg,.fl-link:focus .fg{animation:none;transform:scale(1.16) rotate(2deg);
+    filter:drop-shadow(0 0 10px rgba(232,192,106,.8))}
+  .fl-link.fl-off{cursor:default}
+  .fl-link.fl-off .fg{animation:none}
+  .fl-link.fl-off:hover .fg,.fl-link.fl-off:focus .fg{transform:none;filter:none}
+  @keyframes sway{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.06) rotate(2.5deg)}}
+
+  /* 花语导航图例（相框下方） */
+  .flower-nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;align-items:center;margin-top:10px;padding:0 6px}
+  .fn-hint{font-size:11px;color:#7fa8d9;letter-spacing:1px}
+  .fn-item{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:#c9d9ea;text-decoration:none;
+    padding:4px 11px;border-radius:999px;border:1px solid rgba(98,160,220,.3);background:rgba(13,26,43,.75);transition:.25s}
+  .fn-item:hover{border-color:var(--accent);color:#fff;background:rgba(98,160,220,.18)}
+  .fn-dot{width:8px;height:8px;border-radius:50%;border:1px solid rgba(255,255,255,.35);flex-shrink:0}
+
+  /* 花朵悬停提示气泡 */
+  .fl-tip{position:fixed;z-index:120;pointer-events:none;transform:translate(-50%,-100%);
+    display:flex;align-items:center;gap:6px;background:rgba(10,22,38,.94);border:1px solid rgba(98,160,220,.5);
+    color:#e3edf8;font-size:12px;padding:5px 12px;border-radius:8px;white-space:nowrap;
+    opacity:0;transition:opacity .18s ease;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+  .fl-tip.show{opacity:1}
+  .fl-tip .fn-dot{display:inline-block;width:8px;height:8px;border-radius:50%;border:1px solid rgba(255,255,255,.35)}
+
+  /* ===== 🎵 音乐按钮（左下角） ===== */
+  .music-btn{position:fixed;left:22px;bottom:22px;z-index:99;width:46px;height:46px;border-radius:50%;cursor:pointer;
+    border:1px solid rgba(98,160,220,.55);background:linear-gradient(150deg,var(--card-2),var(--card));color:#8aa3bd;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.5);transition:.3s}
+  .music-btn[hidden]{display:none}
+  .music-btn:hover{border-color:var(--accent);transform:translateY(-3px);color:#c9d9ea}
+  .music-btn .bars{display:flex;gap:2.5px;align-items:flex-end;height:15px}
+  .music-btn .bars i{width:3px;height:30%;border-radius:2px;background:currentColor;transition:height .3s}
+  .music-btn::after{content:'';position:absolute;width:30px;height:2px;border-radius:2px;background:currentColor;
+    transform:rotate(-45deg);opacity:.8;transition:.25s}
+  .music-btn.playing{color:var(--gold);border-color:rgba(232,192,106,.65)}
+  .music-btn.playing::after{opacity:0;transform:rotate(-45deg) scaleX(.5)}
+  .music-btn.playing .bars i{animation:eq .8s ease-in-out infinite}
+  .music-btn.playing .bars i:nth-child(1){animation-delay:0s}
+  .music-btn.playing .bars i:nth-child(2){animation-delay:.25s}
+  .music-btn.playing .bars i:nth-child(3){animation-delay:.5s}
+  @keyframes eq{0%,100%{height:30%}50%{height:100%}}
+
+  /* ===== Hero 右栏 ===== */
+  .crumb{font-size:12px;color:var(--muted);letter-spacing:1px;margin-bottom:10px}
+  .crumb a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(98,160,220,.5)}
+  .crumb a:hover{color:#a9cdf2}
+  .crumb i{font-style:normal;margin:0 6px;color:var(--muted)}
+  .kicker{color:var(--accent);letter-spacing:6px;font-size:13px;font-weight:700}
+  .kicker::before,.kicker::after{content:'✦';color:var(--gold);margin:0 10px;font-size:11px}
+  .name{font-family:'Bebas Neue','Noto Sans SC',sans-serif;font-size:clamp(54px,7.5vw,90px);line-height:.95;letter-spacing:2px;margin:8px 0 4px}
+  .name span{background:linear-gradient(90deg,#8fc1ef,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .name-sub{color:var(--muted);font-size:15px;letter-spacing:2px}
+  .stripe-bar{width:210px;height:7px;margin:16px 0 20px;border-radius:4px;
+    background:repeating-linear-gradient(-45deg, rgba(98,160,220,.55) 0 7px, transparent 7px 14px)}
+
+  .file-card{position:relative;overflow:hidden;background:linear-gradient(165deg,#0f2033,#0b1728);border:1px solid rgba(98,160,220,.35);border-radius:16px;padding:20px 22px 16px;margin:4px 0 20px}
+  .file-scan{position:absolute;left:0;right:0;top:-70px;height:70px;pointer-events:none;
+    background:linear-gradient(180deg,transparent,rgba(98,160,220,.14) 50%,transparent);animation:scan 6s linear infinite}
+  @keyframes scan{to{top:110%}}
+  .stamp{position:absolute;top:14px;right:14px;transform:rotate(-8deg);border:1.5px solid rgba(98,160,220,.5);color:#9cc0ea;
+    padding:3px 10px;border-radius:4px;background:rgba(12,28,49,.65);font-size:10.5px;letter-spacing:2px}
+  .file-head{color:#7fa8d9;font-size:11px;letter-spacing:3px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(98,160,220,.3)}
+  .file-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px dashed rgba(98,160,220,.22);font-size:14px}
+  .file-row:last-child{border-bottom:none}
+  .file-row dt{color:#7fa8d9;font-size:11.5px;letter-spacing:1px;flex-shrink:0}
+  .file-row dd{font-weight:700;text-align:right}
+  .corner{position:relative}
+  .corner::before,.corner::after{content:'';position:absolute;width:16px;height:16px;pointer-events:none;border:0 solid rgba(98,160,220,.7)}
+  .corner::before{top:8px;left:8px;border-top-width:2px;border-left-width:2px}
+  .corner::after{bottom:8px;right:8px;border-bottom-width:2px;border-right-width:2px}
+
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .hstat{background:linear-gradient(160deg,var(--card),#0b1826);border:1px solid var(--line);border-radius:16px;padding:18px 14px;text-align:center;transition:.3s}
+  .hstat:hover{transform:translateY(-5px);border-color:rgba(98,160,220,.55)}
+  .hstat .num{font-family:'Bebas Neue',sans-serif;font-size:46px;color:var(--accent);line-height:1}
+  .hstat .lbl{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+
+  /* ===== 通用区块 ===== */
+  .section{max-width:1100px;margin:0 auto;padding:80px 24px}
+  .sec-no{display:inline-flex;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:4px;color:#d7e6f7;
+    background:repeating-linear-gradient(45deg,#16304f 0 7px,#0c1c31 7px 14px);border:1px solid rgba(98,160,220,.45);padding:4px 14px 2px;border-radius:7px}
+  .sec-head{margin-bottom:42px}
+  .sec-head h2{font-size:clamp(26px,4vw,36px);font-weight:900;margin:10px 0 6px}
+  .sec-head h2 em{font-style:normal;font-family:'Bebas Neue',sans-serif;letter-spacing:3px;color:var(--accent);font-size:.72em;margin-left:12px}
+  .sec-sub{color:var(--muted);font-size:14px}
+  .hl{color:var(--accent);font-weight:800}
+  .gold-t{color:var(--gold);font-weight:800}
+
+  /* ===== 时间线 ===== */
+  .timeline{position:relative;padding-left:36px}
+  .timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),rgba(98,160,220,.05))}
+  .tl-item{position:relative;margin-bottom:36px}
+  .tl-item::before{content:'';position:absolute;left:-33px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 12px rgba(98,160,220,.6)}
+  .tl-year{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:2px;color:var(--gold)}
+  .tl-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 28px;margin-top:8px;transition:.3s}
+  .tl-card::before{content:'';position:absolute;top:-10px;left:32px;width:76px;height:20px;border-radius:2px;transform:rotate(-3deg);pointer-events:none;
+    background:rgba(213,228,244,.14);border:1px solid rgba(213,228,244,.14)}
+  .tl-card:hover{border-color:rgba(98,160,220,.5)}
+  .tl-title{font-size:19px;font-weight:800;margin-bottom:12px}
+  .tl-card ul{list-style:none}
+  .tl-card li{padding:7px 0 7px 22px;position:relative;color:#d3e2ef;font-size:14.5px}
+  .tl-card li::before{content:'▸';color:var(--accent);position:absolute;left:0}
+  .tl-note{margin-top:14px;font-size:12.5px;color:var(--muted);background:rgba(255,255,255,.03);border-left:3px solid var(--orange);padding:9px 14px;border-radius:0 8px 8px 0}
+  .badge{display:inline-block;font-size:11px;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--line);margin-left:8px;vertical-align:2px}
+  .kpi-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+  .kpi{background:linear-gradient(160deg,#13304a,#0c2334);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+  .kpi b{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);line-height:1}
+  .kpi span{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ===== 国际荣誉 ===== */
+  .medal-summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .medal-summary span{font-size:13px;padding:7px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:#d3e2ef}
+  .medal-summary span b{color:var(--gold)}
+  .medal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+  .medal{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.3s}
+  .medal:hover{transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(0,0,0,.75)}
+  .medal.wide{grid-column:span 2}
+  .medal.gold{border-color:rgba(232,192,106,.45);background:linear-gradient(165deg,rgba(232,192,106,.1),var(--card) 55%)}
+  .medal.gold::after{content:'★';position:absolute;right:-6px;top:-14px;font-size:66px;color:rgba(232,192,106,.10);line-height:1;pointer-events:none}
+  .medal.silver{border-color:rgba(201,213,226,.32);background:linear-gradient(165deg,rgba(201,213,226,.08),var(--card) 55%)}
+  .medal-top{display:flex;justify-content:space-between;align-items:center}
+  .medal-year{font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:1px;color:var(--muted)}
+  .medal-icon{font-size:26px}
+  .medal-event{font-size:17px;font-weight:800;margin:8px 0 2px}
+  .medal-result{font-weight:900;font-size:15px}
+  .gold .medal-result{color:var(--gold)} .silver .medal-result{color:var(--silver)} .medal-result.plain{color:var(--accent)}
+  .medal-detail{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.7}
+  .medal-stars{margin-top:10px;color:var(--gold);letter-spacing:6px;font-size:15px}
+  .medal-awards{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+  .medal-awards span{font-size:11.5px;padding:3px 11px;border-radius:999px;background:rgba(232,192,106,.12);color:var(--gold);border:1px solid rgba(232,192,106,.3)}
+
+  /* ===== NCAA ===== */
+  .ncaa-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:28px}
+  .nstat{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;transition:.3s}
+  .nstat:hover{transform:translateY(-5px)}
+  .nstat b{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--gold);line-height:1}
+  .nstat span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+  .nstat i{display:block;font-style:normal;font-size:10px;color:#7fa8d9;letter-spacing:2px;margin-top:4px}
+  .award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px}
+  .award{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:13px;align-items:flex-start;transition:.3s}
+  .award:hover{border-color:rgba(98,160,220,.5)}
+  .award .ico{font-size:22px;line-height:1.4}
+  .award h4{font-size:14.5px;font-weight:800}
+  .award p{font-size:12.5px;color:var(--muted)}
+  .runnerup{margin-top:24px;background:linear-gradient(160deg,rgba(229,154,62,.1),var(--card) 60%);border:1px solid rgba(229,154,62,.35);border-radius:16px;padding:20px 24px;display:flex;gap:14px;align-items:center}
+  .runnerup .ico{font-size:28px}
+  .runnerup h4{font-size:16px;font-weight:800;color:var(--orange)}
+  .runnerup p{font-size:13.5px;color:var(--muted)}
+
+  /* ===== NHL ===== */
+  .nhl-banner{display:flex;align-items:center;gap:16px;border:1px solid rgba(25,194,216,.3);border-radius:18px;padding:20px 26px;margin-bottom:30px;
+    background:
+      repeating-linear-gradient(-45deg, rgba(25,194,216,.10) 0 12px, transparent 12px 24px),
+      linear-gradient(120deg,var(--card-2),var(--card))}
+  .nhl-banner .shark{width:54px;height:54px;border-radius:16px;background:rgba(25,194,216,.12);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+  .nhl-banner h3{font-size:20px;font-weight:900}
+  .nhl-banner p{font-size:12.5px;color:var(--muted);letter-spacing:1px}
+  .table-label{display:flex;align-items:center;gap:10px;margin:0 0 10px 4px;color:#7fa8d9;font-size:12px;letter-spacing:2px}
+  .blink{color:var(--gold);animation:blink 1.6s steps(2) infinite}
+  @keyframes blink{50%{opacity:.15}}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;min-width:680px;font-size:14px}
+  thead th{background:linear-gradient(180deg,#122d47,#0f2438);color:var(--accent);font-size:12.5px;letter-spacing:1px;padding:13px 14px;text-align:center;white-space:nowrap;font-weight:700}
+  .table-wrap.teal thead th{background:linear-gradient(180deg,#0e3a44,#0b2a33);color:#43d3e3}
+  tbody td{padding:13px 14px;text-align:center;border-top:1px solid rgba(255,255,255,.05);color:#d3e2ef}
+  tbody tr:hover{background:rgba(98,160,220,.07)}
+  td:first-child,th:first-child{text-align:left;font-weight:600}
+  .total-row td{background:var(--accent-soft);color:var(--ink);font-weight:800;border-top:2px solid var(--accent)}
+  .pos{color:#7ede8a;font-weight:700} .neg{color:#e09090;font-weight:700}
+  .tag{display:inline-block;font-size:10.5px;padding:1px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+  .info-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:28px}
+  .icard{background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:18px;padding:22px;transition:.3s}
+  .icard:hover{transform:translateY(-5px)}
+  .icard .ico{width:46px;height:46px;border-radius:13px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:12px}
+  .icard h4{font-size:16px;font-weight:800;margin-bottom:6px}
+  .icard p{font-size:13.5px;color:var(--muted)}
+  .icard p b{color:var(--ink)}
+
+  /* ===== 复古档案手记 ===== */
+  .remarks{position:relative;max-width:780px;margin:56px auto 0;background:linear-gradient(160deg,#f5efdf,#eadfc6);color:var(--paper-ink);
+    border-radius:6px;padding:30px 34px 34px;transform:rotate(-1.2deg);box-shadow:0 22px 48px -14px rgba(0,0,0,.65)}
+  .remarks-tape{position:absolute;top:-13px;width:94px;height:26px;border-radius:2px;background:rgba(228,236,246,.55);box-shadow:0 2px 6px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.45)}
+  .tape-l{left:30px;transform:rotate(-4deg)}
+  .tape-r{right:34px;transform:rotate(5deg)}
+  .remarks-title{font-family:'Long Cang','Noto Serif SC',cursive;font-size:34px;color:#5c4f38;margin-bottom:12px}
+  .remarks-list{list-style:none;padding-left:4px}
+  .remarks-list li{font-family:'Noto Serif SC',serif;font-size:14px;line-height:2;padding-left:24px;position:relative;color:#554a38}
+  .remarks-list li::before{content:'✧';position:absolute;left:2px;color:#a5844a}
+  .remarks-seal{position:absolute;right:26px;bottom:20px;width:80px;height:80px;border:2px solid rgba(170,74,58,.6);border-radius:50%;
+    outline:1px dashed rgba(170,74,58,.45);outline-offset:-8px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:rgba(170,74,58,.85);transform:rotate(-14deg);font-size:10px;letter-spacing:1px;line-height:1.6;text-align:center}
+  .remarks-seal b{font-size:19px}
+
+  /* ===== 底部返回条 ===== */
+  .back-strip{max-width:1100px;margin:0 auto;padding:0 24px 70px;text-align:center}
+  .back-big{display:inline-flex;align-items:center;gap:12px;padding:13px 36px;border-radius:999px;cursor:pointer;
+    border:1px solid rgba(98,160,220,.5);background:linear-gradient(160deg,var(--card-2),var(--card));
+    color:var(--ink);font-size:14.5px;letter-spacing:2px;transition:.3s}
+  .back-big svg{width:15px;height:15px;color:var(--accent)}
+  .back-big .mono{color:#7fa8d9;font-size:12px;letter-spacing:1px}
+  .back-big:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 16px 34px -12px rgba(98,160,220,.4)}
+  .back-big:hover .mono{color:#a9cdf2}
+
+  /* ===== Footer ===== */
+  footer{position:relative;border-top:1px solid var(--line);padding:46px 24px 40px;text-align:center;color:var(--muted);font-size:12.5px;background:#081522}
+  footer::before{content:'';position:absolute;top:-5px;left:0;right:0;height:9px;
+    background:repeating-linear-gradient(45deg, rgba(98,160,220,.35) 0 13px, transparent 13px 26px)}
+  .f-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--ink)}
+  .f-name b{color:var(--gold)}
+  .f-mono{margin-top:10px;color:#7fa8d9;letter-spacing:2px;font-size:11px}
+  .f-back{margin-top:14px}
+  .f-back a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(98,160,220,.5)}
+  .f-back a:hover{color:#a9cdf2}
+
+  .to-top{position:fixed;right:22px;bottom:22px;z-index:99;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:var(--accent);color:#06131f;font-size:18px;font-weight:900;text-decoration:none;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 12px 26px rgba(98,160,220,.35)}
+  .to-top.show{opacity:1;pointer-events:auto}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:920px){
+    .hero{padding-top:118px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .album-view{max-width:400px;margin:0 auto}
+    .flowers{right:-34px;top:8%;height:84%}
+    .globe{width:300px;right:-90px}
+    .hero-stats{grid-template-columns:repeat(2,1fr)}
+    .sec-head h2 em{display:block;margin:6px 0 0}
+    .section{padding:64px 24px}
+  }
+  @media (max-width:700px){
+    .medal.wide{grid-column:auto}
+  }
+  @media (max-width:640px){
+    .back-btn .back-txt{display:none}
+    .back-btn{padding:6px 11px}
+  }
+  @media (max-width:560px){
+    .album-view{max-width:340px}
+    .album-body{padding:24px 16px 18px}
+    .frame{padding:10px}
+    .frame-inner{border-width:6px;padding:8px}
+    .flowers{right:-26px;top:7%;height:86%}
+    .music-btn{width:42px;height:42px;left:16px;bottom:16px}
+    .to-top{right:16px;bottom:16px}
+    .remarks{padding:24px 22px 30px;transform:rotate(0)}
+    .remarks-seal{width:66px;height:66px;right:14px;bottom:12px}
+    .file-row{font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 顶部导航 ===================== -->
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <div class="tb-left">
+      <button class="back-btn" id="backBtn" title="返回上一页 index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        <span class="back-txt">返回主页</span>
+      </button>
+      <div class="logo">WS<b>/</b>CAREER FILE</div>
+    </div>
+    <nav class="nav">
+      <a href="#hero" class="active">概览</a>
+      <a href="#journey">成长轨迹</a>
+      <a href="#international">国际荣誉</a>
+      <a href="#ncaa">NCAA</a>
+      <a href="#nhl">NHL</a>
+      <a href="#stats">数据总览</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== Hero 概览 ===================== -->
+<section class="hero" id="hero">
+
+  <svg class="globe" viewBox="0 0 400 400" fill="none" stroke="#62a0dc" aria-hidden="true">
+    <circle cx="200" cy="200" r="188" stroke-opacity=".22"/>
+    <ellipse cx="200" cy="200" rx="188" ry="70" stroke-opacity=".18"/>
+    <ellipse cx="200" cy="200" rx="188" ry="130" stroke-opacity=".15"/>
+    <ellipse cx="200" cy="200" rx="70" ry="188" stroke-opacity=".18"/>
+    <ellipse cx="200" cy="200" rx="130" ry="188" stroke-opacity=".15"/>
+    <line x1="12" y1="200" x2="388" y2="200" stroke-opacity=".12"/>
+    <line x1="200" y1="12" x2="200" y2="388" stroke-opacity=".12"/>
+  </svg>
+  <span class="hero-star" style="top:17%;left:7%" aria-hidden="true">★</span>
+  <span class="hero-star" style="top:11%;right:32%;font-size:12px" aria-hidden="true">★</span>
+  <span class="hero-star" style="bottom:22%;left:3%;font-size:14px" aria-hidden="true">✦</span>
+
+  <div class="hero-grid">
+
+    <!-- 相册查看器 + 蓝白花卉相框 -->
+    <div class="photo-side reveal">
+      <div class="album-view">
+        <div class="album-topbar mono">
+          <button class="album-x" id="albumClose" title="返回上一页 index.html" aria-label="关闭并返回上一页">✕</button>
+          <span>PORTRAIT · 肖像档案</span>
+          <span class="album-count"><b>1</b> / 1</span>
+        </div>
+        <div class="album-body">
+          <div class="frame" id="photoFrame">
+            <!-- 顶部圆形花章（可点击 · 入口1） -->
+            <svg class="ring" viewBox="0 0 60 60">
+              <a class="fl-link" id="fl-ring">
+                <g class="fg">
+                  <circle cx="30" cy="30" r="30" fill="none" pointer-events="all"/>
+                  <g fill="#7fa9d9" stroke="#4d7cb4" stroke-width="1">
+                    <ellipse cx="30" cy="9" rx="5" ry="9"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(45 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(90 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(135 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(180 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(225 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(270 30 30)"/>
+                    <ellipse cx="30" cy="9" rx="5" ry="9" transform="rotate(315 30 30)"/>
+                  </g>
+                  <circle cx="30" cy="30" r="11" fill="#eef3fa" stroke="#2f5a86" stroke-width="2.5"/>
+                  <circle cx="30" cy="30" r="4.5" fill="#2f5a86"/>
+                </g>
+              </a>
+            </svg>
+            <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#1d3a5f" stroke="#eef3fa" stroke-width="1.2"/>
+            </svg>
+            <div class="jersey"><b>2</b><span>SHARKS</span></div>
+
+            <div class="frame-inner">
+              <!-- 照片由文件顶部「⚙️ 换照片配置区」的 PHOTO 变量控制，无需修改此处 -->
+              <img class="photo" id="portrait"
+                   alt="Will Smith 个人肖像照"
+                   onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22300%22%20height=%22400%22%3E%3Crect%20width=%22300%22%20height=%22400%22%20fill=%22%23102238%22/%3E%3Ctext%20x=%22150%22%20y=%22215%22%20font-family=%22Arial%22%20font-size=%22110%22%20font-weight=%22bold%22%20fill=%22%238fb9e0%22%20text-anchor=%22middle%22%3EWS%3C/text%3E%3C/svg%3E'">
+            </div>
+
+            <!-- 花簇（每朵花 = 一个跳转入口） -->
+            <svg class="flowers" viewBox="0 0 150 310">
+              <defs>
+                <ellipse id="pb"  cx="0" cy="-26" rx="12" ry="24" fill="#7fa9d9" stroke="#4d7cb4" stroke-width="1.5"/>
+                <ellipse id="pbi" cx="0" cy="-15" rx="8"  ry="13" fill="#a9c7e9" stroke="#4d7cb4" stroke-width="1"/>
+                <ellipse id="pw"  cx="0" cy="-11" rx="6.5" ry="11" fill="#f4f8fc" stroke="#b3c8e2" stroke-width="1.2"/>
+                <path id="leaf" d="M0 0 C16 -15 40 -17 56 -4 C40 11 16 13 0 0 Z" fill="#6f9b63" stroke="#4d7a45" stroke-width="1.2"/>
+              </defs>
+              <path d="M78 78 C88 130 82 180 78 250" stroke="#6f9b63" stroke-width="2.5" fill="none"/>
+              <path d="M62 200 C70 220 72 236 80 252" stroke="#6f9b63" stroke-width="2" fill="none"/>
+              <path d="M96 118 C100 140 96 160 90 176" stroke="#6f9b63" stroke-width="2" fill="none"/>
+              <use href="#leaf" transform="translate(38,86) rotate(-35)"/>
+              <use href="#leaf" transform="translate(48,128) rotate(25) scale(.92)"/>
+              <use href="#leaf" transform="translate(66,236) rotate(55) scale(1.08)"/>
+              <use href="#leaf" transform="translate(88,96) rotate(-12) scale(.8)"/>
+              <use href="#leaf" transform="translate(70,172) rotate(160) scale(.75)"/>
+
+              <!-- 大蓝花（入口2） -->
+              <a class="fl-link" id="fl-blue-main">
+                <g transform="translate(78,58) rotate(12)">
+                  <circle r="52" fill="none" pointer-events="all"/>
+                  <g class="fg">
+                    <use href="#pb" transform="rotate(0)"/><use href="#pb" transform="rotate(60)"/><use href="#pb" transform="rotate(120)"/>
+                    <use href="#pb" transform="rotate(180)"/><use href="#pb" transform="rotate(240)"/><use href="#pb" transform="rotate(300)"/>
+                    <use href="#pbi" transform="rotate(30)"/><use href="#pbi" transform="rotate(90)"/><use href="#pbi" transform="rotate(150)"/>
+                    <use href="#pbi" transform="rotate(210)"/><use href="#pbi" transform="rotate(270)"/><use href="#pbi" transform="rotate(330)"/>
+                    <circle r="10" fill="#2f5a86"/><circle r="4.2" fill="#eef3fa"/>
+                  </g>
+                </g>
+              </a>
+
+              <!-- 白花①（入口3） -->
+              <a class="fl-link" id="fl-white-a">
+                <g transform="translate(102,152) rotate(-8)">
+                  <circle r="26" fill="none" pointer-events="all"/>
+                  <g class="fg">
+                    <use href="#pw" transform="rotate(0)"/><use href="#pw" transform="rotate(72)"/><use href="#pw" transform="rotate(144)"/>
+                    <use href="#pw" transform="rotate(216)"/><use href="#pw" transform="rotate(288)"/>
+                    <circle r="4" fill="#e8c06a" stroke="#c99a3f" stroke-width="1"/>
+                  </g>
+                </g>
+              </a>
+
+              <!-- 白花②（入口4） -->
+              <a class="fl-link" id="fl-white-b">
+                <g transform="translate(58,196) rotate(14)">
+                  <circle r="26" fill="none" pointer-events="all"/>
+                  <g class="fg">
+                    <use href="#pw" transform="rotate(0)"/><use href="#pw" transform="rotate(72)"/><use href="#pw" transform="rotate(144)"/>
+                    <use href="#pw" transform="rotate(216)"/><use href="#pw" transform="rotate(288)"/>
+                    <circle r="4" fill="#e8c06a" stroke="#c99a3f" stroke-width="1"/>
+                  </g>
+                </g>
+              </a>
+
+              <!-- 小蓝花（入口5） -->
+              <a class="fl-link" id="fl-blue-small">
+                <g transform="translate(80,262) rotate(-18) scale(.68)">
+                  <circle r="55" fill="none" pointer-events="all"/>
+                  <g class="fg">
+                    <use href="#pb" transform="rotate(0)"/><use href="#pb" transform="rotate(60)"/><use href="#pb" transform="rotate(120)"/>
+                    <use href="#pb" transform="rotate(180)"/><use href="#pb" transform="rotate(240)"/><use href="#pb" transform="rotate(300)"/>
+                    <circle r="10" fill="#2f5a86"/><circle r="4.2" fill="#eef3fa"/>
+                  </g>
+                </g>
+              </a>
+            </svg>
+          </div>
+        </div>
+        <div class="album-cap mono">ID-PHOTO · WILL SMITH · #2 SAN JOSE</div>
+        <!-- 花语导航图例（由 JS 依据 FLOWER_LINKS 自动生成） -->
+        <div class="flower-nav" id="flowerNav">
+          <span class="fn-hint">🌸 花语导航 · 点按花朵进入</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-side">
+      <div class="crumb reveal"><a href="index.html">⌂ 主页 index.html</a><i>»</i>职业档案详情页</div>
+      <div class="kicker reveal">ICE HOCKEY · CAREER DOSSIER</div>
+      <h1 class="name reveal">WILL <span>SMITH</span></h1>
+      <p class="name-sub reveal">职业冰球运动员 · 个人职业档案</p>
+      <div class="stripe-bar reveal"></div>
+
+      <div class="file-card corner reveal">
+        <div class="file-scan"></div>
+        <span class="stamp mono">PUBLIC RECORD · 公开记录</span>
+        <div class="file-head mono">CASE FILE · 职业档案登记卡</div>
+        <dl class="file-list">
+          <div class="file-row"><dt>SUBJECT · 登记对象</dt><dd>WILL SMITH</dd></div>
+          <div class="file-row"><dt>TEAM · 现效力球队</dt><dd>🦈 圣何塞鲨鱼</dd></div>
+          <div class="file-row"><dt>POSITION · 位置 / 惯用手</dt><dd>中锋 C · 右手</dd></div>
+          <div class="file-row"><dt>DRAFT · NHL 选秀</dt><dd>2023 首轮 4 顺位</dd></div>
+          <div class="file-row"><dt>DEBUT · NHL 首秀</dt><dd>2024-25 赛季</dd></div>
+          <div class="file-row"><dt>FILE NO. · 档案编号</dt><dd class="mono">SJ-2023-004</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat reveal"><span class="num" data-count="104">0</span><span class="lbl">NHL 生涯得分</span></div>
+        <div class="hstat reveal"><span class="num" data-count="127">0</span><span class="lbl">NTDP 单季得分 · 队史第二</span></div>
+        <div class="hstat reveal"><span class="num" data-count="71">0</span><span class="lbl">NCAA 全国得分王</span></div>
+        <div class="hstat reveal"><span class="num" data-count="4">0</span><span class="lbl">选秀首轮顺位</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stripe"></div>
+</section>
+
+<!-- ===================== 01 成长轨迹 ===================== -->
+<section class="section" id="journey">
+  <div class="sec-head reveal">
+    <span class="sec-no">01</span>
+    <h2>成长轨迹 <em>THE JOURNEY</em></h2>
+    <p class="sec-sub">从波士顿青少年梯队，到 USNTDP、NCAA，直至 NHL 的进阶之路</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-year">2018 – 2021</div>
+      <div class="tl-card">
+        <div class="tl-title">🏒 青少年梯队 · Boston Jr. Eagles</div>
+        <ul>
+          <li><strong>2018-19</strong>：13U AAA</li>
+          <li><strong>2019-20</strong>：14U AAA</li>
+          <li><strong>2020-21</strong>：16U AAA（同时效力 St. Sebastian's School）</li>
+        </ul>
+        <p class="tl-note">公开记录仅确认其效力球队，无该级别个人联赛奖项记录。</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2021 – 2023</div>
+      <div class="tl-card">
+        <div class="tl-title">🇺🇸 USNTDP · 美国国家冰球发展队</div>
+        <ul>
+          <li><strong>2021-22 · U17</strong>：35场，17球 20助攻，<b class="hl">37分</b></li>
+          <li><strong>2021-22 · U18</strong>：28场，14球 13助攻，<b class="hl">27分</b></li>
+          <li><strong>2022-23 单赛季 127 分</strong>：51球 76助攻 —— NTDP 队史单赛季得分<span class="badge">第二</span></li>
+          <li><strong>NTDP 生涯 191 分</strong>：队史生涯得分第二（仅次于 Jack Hughes）</li>
+          <li><strong>2022-23 Bob Johnson Award</strong>：美国冰球国际赛事卓越奖</li>
+        </ul>
+        <div class="kpi-row">
+          <div class="kpi"><b>127</b><span>单赛季得分 · 队史第二</span></div>
+          <div class="kpi"><b>191</b><span>生涯得分 · 仅次于 Jack Hughes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2023 – 2024</div>
+      <div class="tl-card">
+        <div class="tl-title">🎓 NCAA · Boston College</div>
+        <ul>
+          <li>NCAA 全国<b class="hl">得分王（71分）</b>、<b class="hl">助攻王（46次）</b></li>
+          <li>打破 Boston College <b class="hl">校史新生得分纪录</b></li>
+          <li>Hobey Baker 奖最终候选人 · CCM/AHCA 全美第一队</li>
+          <li>Hockey East 锦标赛 MVP · 第一队全明星 · 最佳新秀阵容 · 锦标赛最佳阵容</li>
+          <li>2024 Frozen Four <b class="gold-t">全国亚军</b>（决赛 0-2 负于 Denver）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2024 – 至今</div>
+      <div class="tl-card">
+        <div class="tl-title">🦈 NHL · San Jose Sharks 圣何塞鲨鱼</div>
+        <ul>
+          <li><strong>2024-25（新秀）</strong>：74场，18球 27助攻，<b class="hl">45分</b></li>
+          <li><strong>2025-26（二年级）</strong>：69场，24球 35助攻，<b class="hl">59分</b>（166次射正 · 14.5%）</li>
+          <li><strong>NHL 生涯总计</strong>：143场，42球 62助攻，<b class="hl">104分</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 国际荣誉 ===================== -->
+<section class="section" id="international">
+  <div class="sec-head reveal">
+    <span class="sec-no">02</span>
+    <h2>国际赛场荣誉 <em>INTERNATIONAL</em></h2>
+    <p class="sec-sub">代表美国队出战各级国际赛事的奖牌与个人荣誉</p>
+  </div>
+
+  <div class="medal-summary reveal">
+    <span>🥇 <b>金牌赛事</b>：世锦赛（2025）· 世青赛（2024）· U18 世锦赛（2023）</span>
+    <span>🎖️ U18 世锦赛单届包揽 <b>MVP · 最佳前锋 · 媒体全明星 · 得分王</b></span>
+  </div>
+
+  <div class="medal-grid">
+    <div class="medal gold reveal">
+      <div class="medal-top"><span class="medal-year">2025</span><span class="medal-icon">🥇</span></div>
+      <div class="medal-event">男子世锦赛</div>
+      <div class="medal-result">金牌</div>
+      <div class="medal-detail">10场 · 7助攻</div>
+    </div>
+
+    <div class="medal gold reveal">
+      <div class="medal-top"><span class="medal-year">2024</span><span class="medal-icon">🥇</span></div>
+      <div class="medal-event">世青赛（U20）</div>
+      <div class="medal-result">金牌</div>
+      <div class="medal-detail">决赛贡献 2 助攻</div>
+    </div>
+
+    <div class="medal gold wide reveal">
+      <div class="medal-top"><span class="medal-year">2023</span><span class="medal-icon">👑</span></div>
+      <div class="medal-event">U18 世锦赛</div>
+      <div class="medal-result">金牌</div>
+      <div class="medal-stars" aria-hidden="true">★★★★</div>
+      <div class="medal-detail">20分，追平 Jack Hughes 保持的美国队单届得分纪录</div>
+      <div class="medal-awards">
+        <span>赛事 MVP</span><span>最佳前锋</span><span>媒体全明星</span><span>得分王</span>
+      </div>
+    </div>
+
+    <div class="medal silver reveal">
+      <div class="medal-top"><span class="medal-year">2023</span><span class="medal-icon">🥈</span></div>
+      <div class="medal-event">U18 四国赛</div>
+      <div class="medal-result">第 2 名</div>
+    </div>
+
+    <div class="medal silver reveal">
+      <div class="medal-top"><span class="medal-year">2022</span><span class="medal-icon">🥈</span></div>
+      <div class="medal-event">U18 世锦赛</div>
+      <div class="medal-result">银牌</div>
+    </div>
+
+    <div class="medal gold reveal">
+      <div class="medal-top"><span class="medal-year">2022</span><span class="medal-icon">🏆</span></div>
+      <div class="medal-event">U18 五国赛</div>
+      <div class="medal-result">第 1 名</div>
+    </div>
+
+    <div class="medal reveal">
+      <div class="medal-top"><span class="medal-year">2021</span><span class="medal-icon">🏅</span></div>
+      <div class="medal-event">U17 四国赛</div>
+      <div class="medal-result plain">一站第 1 名 · 一站第 2 名</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 NCAA ===================== -->
+<section class="section" id="ncaa">
+  <div class="sec-head reveal">
+    <span class="sec-no">03</span>
+    <h2>NCAA 闪耀赛季 <em>BOSTON COLLEGE</em></h2>
+    <p class="sec-sub">Boston College · 2023-24 · 一季封神的新生战役</p>
+  </div>
+
+  <div class="ncaa-stats">
+    <div class="nstat corner reveal"><b>71</b><span>总得分 · 全国得分王</span><i class="mono">PTS LEADER</i></div>
+    <div class="nstat corner reveal"><b>46</b><span>助攻 · 全国助攻王</span><i class="mono">ASSISTS LEADER</i></div>
+    <div class="nstat corner reveal"><b>25</b><span>进球</span><i class="mono">GOALS</i></div>
+  </div>
+
+  <div class="award-grid">
+    <div class="award reveal"><span class="ico">🏅</span><div><h4>全美第一队</h4><p>CCM/AHCA First Team All-American</p></div></div>
+    <div class="award reveal"><span class="ico">🎖️</span><div><h4>Hobey Baker 奖最终候选人</h4><p>全美最佳球员评选前三</p></div></div>
+    <div class="award reveal"><span class="ico">⭐</span><div><h4>Hockey East 第一队全明星</h4><p>联赛官方赛季最佳阵容</p></div></div>
+    <div class="award reveal"><span class="ico">🌟</span><div><h4>最佳新秀阵容</h4><p>Hockey East All-Rookie Team</p></div></div>
+    <div class="award reveal"><span class="ico">🏆</span><div><h4>锦标赛 MVP</h4><p>Hockey East 淘汰赛最有价值球员</p></div></div>
+    <div class="award reveal"><span class="ico">📋</span><div><h4>锦标赛最佳阵容</h4><p>Hockey East 锦标赛 All-Tournament Team</p></div></div>
+    <div class="award reveal"><span class="ico">📈</span><div><h4>校史新生得分纪录</h4><p>打破 Boston College 新生得分纪录</p></div></div>
+  </div>
+
+  <div class="runnerup reveal">
+    <span class="ico">🥈</span>
+    <div>
+      <h4>2024 Frozen Four 全国亚军</h4>
+      <p>决赛 0-2 负于 Denver，随队闯入 NCAA 全国决赛</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 NHL ===================== -->
+<section class="section" id="nhl">
+  <div class="sec-head reveal">
+    <span class="sec-no">04</span>
+    <h2>NHL 生涯 <em>SAN JOSE SHARKS</em></h2>
+    <p class="sec-sub">圣何塞鲨鱼 · 从高顺位新秀到二年级核心</p>
+  </div>
+
+  <div class="nhl-banner reveal">
+    <div class="shark">🦈</div>
+    <div>
+      <h3>San Jose Sharks · 圣何塞鲨鱼</h3>
+      <p>2023年首轮第4顺位选中 · 2024年正式登陆 NHL</p>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="table-label mono"><span class="blink">●</span> DATA READOUT · NHL 常规赛数据读取</div>
+    <div class="table-wrap teal">
+      <table>
+        <thead>
+          <tr><th>赛季</th><th>场次</th><th>进球</th><th>助攻</th><th>得分</th><th>+/-</th><th>罚时</th><th>射正</th><th>射正率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2024-25<span class="tag">新秀</span></td><td>74</td><td>18</td><td>27</td><td class="hl">45</td><td class="neg">-15</td><td>18'</td><td>—</td><td>—</td></tr>
+          <tr><td>2025-26<span class="tag">二年级</span></td><td>69</td><td>24</td><td>35</td><td class="hl">59</td><td class="pos">+1</td><td>16'</td><td>166</td><td>14.5%</td></tr>
+          <tr class="total-row"><td>NHL 生涯总计</td><td>143</td><td>42</td><td>62</td><td>104</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-cards">
+    <div class="icard reveal">
+      <div class="ico">📌</div>
+      <h4>2023 NHL 选秀</h4>
+      <p>首轮第 <b>4</b> 顺位被 <b>圣何塞鲨鱼</b> 选中</p>
+    </div>
+    <div class="icard reveal">
+      <div class="ico">✍️</div>
+      <h4>2024 年 5 月 28 日</h4>
+      <p>签下 <b>三年入门级合同</b>（Entry-Level Contract）</p>
+    </div>
+    <div class="icard reveal">
+      <div class="ico">🏆</div>
+      <h4>鲨鱼队年度最佳新秀</h4>
+      <p>2023-24 赛季 <b>Prospect of the Year</b>（鲨鱼队官方公布）</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 数据总览 + 档案手记 ===================== -->
+<section class="section" id="stats">
+  <div class="sec-head reveal">
+    <span class="sec-no">05</span>
+    <h2>生涯数据总览 <em>CAREER STATS</em></h2>
+    <p class="sec-sub">各阶段联赛数据一览 · 「—」表示公开资料未提供该项数据</p>
+  </div>
+
+  <div class="reveal">
+    <div class="table-label mono"><span class="blink">●</span> FULL CAREER SCAN · 生涯全景数据扫描</div>
+    <div class="table-wrap">
+      <table style="min-width:780px">
+        <thead>
+          <tr><th>阶段</th><th>球队 / 联赛</th><th>赛季</th><th>场次</th><th>进球</th><th>助攻</th><th>得分</th><th>附注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>青少年</td><td>Boston Jr. Eagles</td><td>2018-2021</td><td>—</td><td>—</td><td>—</td><td>—</td><td>13U / 14U / 16U AAA</td></tr>
+          <tr><td>USNTDP</td><td>U17 队</td><td>2021-22</td><td>35</td><td>17</td><td>20</td><td class="hl">37</td><td>—</td></tr>
+          <tr><td>USNTDP</td><td>U18 队</td><td>2021-22</td><td>28</td><td>14</td><td>13</td><td class="hl">27</td><td>—</td></tr>
+          <tr><td>USNTDP</td><td>单赛季总计</td><td>2022-23</td><td>—</td><td>51</td><td>76</td><td class="hl">127</td><td>队史单季得分第二 · Bob Johnson Award</td></tr>
+          <tr><td>NCAA</td><td>Boston College</td><td>2023-24</td><td>—</td><td>25</td><td>46</td><td class="hl">71</td><td>全国得分王 · 助攻王 · 校史新生纪录</td></tr>
+          <tr><td>NHL</td><td>圣何塞鲨鱼</td><td>2024-25</td><td>74</td><td>18</td><td>27</td><td class="hl">45</td><td>新秀赛季</td></tr>
+          <tr><td>NHL</td><td>圣何塞鲨鱼</td><td>2025-26</td><td>69</td><td>24</td><td>35</td><td class="hl">59</td><td>166 射正 · 14.5%</td></tr>
+          <tr class="total-row"><td>NHL</td><td>生涯合计</td><td>—</td><td>143</td><td>42</td><td>62</td><td>104</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="remarks reveal">
+    <span class="remarks-tape tape-l" aria-hidden="true"></span>
+    <span class="remarks-tape tape-r" aria-hidden="true"></span>
+    <h3 class="remarks-title">✒ 档案备注</h3>
+    <ul class="remarks-list">
+      <li>「鲨鱼队年度最佳新秀」由鲨鱼队官方公布，授予未打过 NHL 比赛的体系内最佳球员；Will Smith 为 2023-24 赛季获奖者。</li>
+      <li>本档案依据公开记录整理；表格中「—」表示公开资料未提供该项数据。</li>
+      <li>数据统计截至 2025-26 赛季。</li>
+    </ul>
+    <div class="remarks-seal mono"><b>★</b>PUBLIC<br>RECORD</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== 底部返回条 ===================== -->
+<div class="back-strip">
+  <button class="back-big reveal" id="backBig" title="返回 index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    返回主页 <span class="mono">index.html</span>
+  </button>
+</div>
+
+<footer>
+  <div class="f-name">WILL SMITH <b>★</b> SAN JOSE SHARKS <b>★</b> #2</div>
+  <p style="margin-top:10px">个人职业档案展示页 · 依据公开记录整理 · 数据截至 2025-26 赛季</p>
+  <p class="f-mono mono">FILE NO. SJ-2023-004 · COMPILED FROM PUBLIC RECORDS</p>
+  <p class="f-back"><a href="index.html">← 返回 index.html · 主页</a></p>
+</footer>
+
+<!-- 花朵悬停提示气泡 -->
+<div class="fl-tip" id="flTip" aria-hidden="true"></div>
+
+<!-- 🎵 背景音乐按钮（音频可加载时由 JS 显示） -->
+<button class="music-btn" id="musicBtn" title="背景音乐 开/关" aria-label="背景音乐开关" hidden>
+  <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+
+<a href="#hero" class="to-top" id="toTop" aria-label="返回顶部">↑</a>
+
+<script>
+  /* ========== 返回上一页（index.html） ========== */
+  function goBack(){
+    let canBack = false;
+    try{
+      const ref = document.referrer;
+      if (ref && history.length > 1){
+        const ro = new URL(ref).origin, lo = location.origin;
+        canBack = (ro === lo) || (ro === 'null' && (lo === 'null' || lo === 'file://'));
+      }
+    }catch(e){}
+    if (canBack){
+      const t = setTimeout(() => { location.href = 'index.html'; }, 700);
+      window.addEventListener('pagehide', () => clearTimeout(t), {once:true});
+      history.back();
+    } else {
+      location.href = 'index.html';
+      }
+  }
+  document.getElementById('backBtn').addEventListener('click', goBack);
+  document.getElementById('albumClose').addEventListener('click', goBack);
+  document.getElementById('backBig').addEventListener('click', goBack);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') goBack(); });
+
+  /* ========== 相框自适应照片比例 ========== */
+  const photoEl = document.getElementById('portrait');
+  const frameEl = document.getElementById('photoFrame');
+  function fitFrame(){
+    const w = photoEl.naturalWidth, h = photoEl.naturalHeight;
+    if (!w || !h) return;
+    const r = h / w;
+    frameEl.classList.toggle('is-landscape', r < 0.95);
+    frameEl.classList.toggle('is-tall', r >= 1.45);
+  }
+  photoEl.addEventListener('load', fitFrame);
+
+  /* ========== 应用顶部「照片配置区」 ========== */
+  if (typeof PHOTO !== 'undefined' && PHOTO) photoEl.src = PHOTO;
+  if (typeof PHOTO_ALT !== 'undefined' && PHOTO_ALT) photoEl.alt = PHOTO_ALT;
+  if (typeof PHOTO_CAPTION !== 'undefined' && PHOTO_CAPTION)
+    document.querySelector('.album-cap').textContent = PHOTO_CAPTION;
+  if (photoEl.complete && photoEl.naturalWidth) fitFrame();
+
+  /* ========== 🌸 花朵跳转入口（依据顶部 FLOWER_LINKS 配置） ========== */
+  (function initFlowerLinks(){
+    if (typeof FLOWER_LINKS === 'undefined' || !FLOWER_LINKS) return;
+    const FLOWER_COLORS = {
+      ring:'#9cc0ea', blueMain:'#7fa9d9', whiteA:'#f4f8fc',
+      whiteB:'#f4f8fc', blueSmall:'#a9c7e9'
+    };
+    const nav = document.getElementById('flowerNav');
+    const tip = document.getElementById('flTip');
+
+    function showTip(el, label, color){
+      if (!label) return;
+      tip.innerHTML = '';
+      const dot = document.createElement('span');
+      dot.className = 'fn-dot';
+      dot.style.background = color || '#7fa9d9';
+      tip.appendChild(dot);
+      tip.appendChild(document.createTextNode(label));
+      const r = el.getBoundingClientRect();
+      tip.style.left = Math.min(Math.max(r.left + r.width / 2, 80), window.innerWidth - 80) + 'px';
+      tip.style.top  = Math.max(r.top - 12, 34) + 'px';
+      tip.classList.add('show');
+    }
+    function hideTip(){ tip.classList.remove('show'); }
+
+    Object.keys(FLOWER_LINKS).forEach(key => {
+      const cfg = FLOWER_LINKS[key] || {};
+      const a = document.getElementById('fl-' + key);
+      if (!a) return;
+      if (cfg.url){
+        a.setAttribute('href', cfg.url);
+        a.setAttribute('aria-label', cfg.label || cfg.url);
+        /* 相框下方图例 chip */
+        const chip = document.createElement('a');
+        chip.href = cfg.url;
+        chip.className = 'fn-item';
+        const dot = document.createElement('span');
+        dot.className = 'fn-dot';
+        dot.style.background = FLOWER_COLORS[key] || '#7fa9d9';
+        chip.appendChild(dot);
+        chip.appendChild(document.createTextNode(cfg.label || cfg.url));
+        nav.appendChild(chip);
+        /* 悬停提示 */
+        a.addEventListener('pointerenter', () => showTip(a, cfg.label, FLOWER_COLORS[key]));
+        a.addEventListener('pointerleave', hideTip);
+        chip.addEventListener('pointerenter', () => showTip(chip, cfg.label, FLOWER_COLORS[key]));
+        chip.addEventListener('pointerleave', hideTip);
+      } else {
+        a.classList.add('fl-off');   /* url 留空 → 仅装饰 */
+      }
+    });
+    window.addEventListener('scroll', hideTip, {passive:true});
+  })();
+
+  /* ========== 🎵 背景音乐（依据顶部音乐配置） ========== */
+  (function initMusic(){
+    const btn = document.getElementById('musicBtn');
+    if (typeof MUSIC_URL === 'undefined' || !MUSIC_URL){ btn.remove(); return; }
+    const audio = new Audio();
+    audio.loop = true;
+    audio.preload = 'auto';
+    if (typeof MUSIC_VOLUME !== 'undefined'){
+      const v = parseFloat(MUSIC_VOLUME);
+      audio.volume = isNaN(v) ? .5 : Math.min(Math.max(v, 0), 1);
+    }
+    audio.src = MUSIC_URL;
+    audio.addEventListener('canplay',  () => { btn.hidden = false; });   /* 能加载才显示按钮 */
+    audio.addEventListener('error',    () => { btn.remove(); });         /* 文件不存在则移除 */
+    audio.addEventListener('play',     () => btn.classList.add('playing'));
+    audio.addEventListener('pause',    () => btn.classList.remove('playing'));
+    btn.addEventListener('click', () => {
+      if (audio.paused){ audio.play().catch(()=>{}); }
+      else { audio.pause(); }
+    });
+    /* 浏览器禁止无交互自动出声 → 首次点按页面任意处尝试播放 */
+    if (typeof MUSIC_AUTOPLAY !== 'undefined' && MUSIC_AUTOPLAY){
+      const tryPlay = e => {
+        if (e.target && e.target.closest && e.target.closest('#musicBtn')) return; /* 按钮自身处理 */
+        audio.play().then(() => {}).catch(() => {});
+        window.removeEventListener('pointerdown', tryPlay);
+        window.removeEventListener('keydown', tryPlay);
+      };
+      window.addEventListener('pointerdown', tryPlay);
+      window.addEventListener('keydown', tryPlay);
+    }
+  })();
+
+  /* ========== 导航 / 动画 / 计数（原有功能） ========== */
+  const topbar = document.getElementById('topbar');
+  const toTop  = document.getElementById('toTop');
+  const navLinks = document.querySelectorAll('.nav a');
+  const sections = document.querySelectorAll('main section[id]');
+
+  function onScroll(){
+    topbar.classList.toggle('scrolled', window.scrollY > 40);
+    toTop.classList.toggle('show', window.scrollY > 600);
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 170) cur = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, dur = 1400, t0 = performance.now();
+      const step = t => {
+        const p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      cio.unobserve(el);
+    });
+  }, {threshold:.4});
+  document.querySelectorAll('[data-count]').forEach(c => cio.observe(c));
+</script>
+
+</body>
+</html>
+      
